@@ -63,19 +63,19 @@ class ServiceTest {
 
 
     @Test
-    void findAll() {
+    void testFindAll() {
         Mockito.when(repository.findAll()).thenReturn(Arrays.asList(testCars));
         assertEquals(repository.findAll().size(), testCars.length);
     }
 
     @Test
-    void update() {
+    void testUpdate() {
         service.update(testCars[0]);
         Mockito.verify(repository, Mockito.times(1)).update(testCars[0]);
     }
 
     @Test
-    void delete() {
+    void testDelete() {
         service.delete(testCars[0].getId());
         Mockito.verify(repository, Mockito.times(1)).delete(testCars[0].getId());
     }

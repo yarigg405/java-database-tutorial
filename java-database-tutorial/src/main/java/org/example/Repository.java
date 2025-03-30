@@ -22,6 +22,9 @@ public class Repository {
                     + "horsePower INTEGER, "
                     + "PRIMARY KEY (id))";
 
+    private static final String DROP_TABLE_QUERY =
+            "DROP TABLE CARS";
+
     private static final String INSERT_QUERY =
             "INSERT INTO cars (modelYear, mark, model, horsePower) VALUES('?','?','?','?')";
 
@@ -35,6 +38,10 @@ public class Repository {
         this.properties = getProperties();
 
         updateQuery(CREATE_TABLE_QUERY);
+    }
+
+    public void Dispose() {
+        updateQuery(DROP_TABLE_QUERY);
     }
 
 
