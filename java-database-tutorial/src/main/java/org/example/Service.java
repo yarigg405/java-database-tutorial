@@ -1,10 +1,13 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Service {
-    private final Repository repository = new Repository();
+    private final Repository repository;
+
+    public Service(Repository repository) {
+        this.repository = repository;
+    }
 
     public void save(CarDataModel car) {
         repository.save(car);
